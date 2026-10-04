@@ -120,7 +120,8 @@ button {
     height: 4px;
     background: var(--main-color);
     width: 0%;
-    z-index: 1000;
+    z-index: 1100;   /* acima do menu, para a barra ficar visível */
+    pointer-events: none;   /* não bloqueia cliques nem causa scroll */
 }
 
 
