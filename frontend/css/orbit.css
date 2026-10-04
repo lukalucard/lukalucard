@@ -20,6 +20,19 @@
     perspective: 800px;
 }
 
+/* ============================================================
+   HERO DA PÁGINA DE PROJETOS
+   ============================================================ */
+
+.projetos-hero_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    z-index: 2;
+}
+
 
 /* ================= CENTRO ================= */
 
