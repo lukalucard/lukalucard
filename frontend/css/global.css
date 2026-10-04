@@ -59,6 +59,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden; 
 
     /* Scrollbar Firefox */
     scrollbar-width: thin;
