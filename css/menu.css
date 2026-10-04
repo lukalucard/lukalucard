@@ -1,0 +1,267 @@
+/* ============================================================
+   menu.css — Header, logo, navbar, menu hamburguer e overlay
+   ============================================================ */
+
+
+/* ================= OVERLAY (fundo escuro ao abrir menu) ================= */
+
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity var(--transition-base);
+    z-index: 999;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* ================= HEADER ================= */
+
+.menu {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 1rem 0;
+    background-color: rgba(3, 12, 22, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari */
+
+    z-index: 1000;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* ================= LOGO ================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    transition: transform var(--transition-base);
+}
+
+.logo:hover {
+    transform: scale(1.08);
+}
+
+.logo img {
+    width: clamp(40px, 6vw, 60px);
+    padding: 5px;
+
+    border-radius: 10px;
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 20px var(--main-color);
+
+    animation: pulse-outline 1s ease-in-out infinite;
+}
+
+.logo p {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--main-color);
+    text-transform: uppercase;
+    cursor: pointer;
+
+    transition: color var(--transition-base);
+}
+
+@keyframes pulse-outline {
+    from {
+        outline: 0 solid var(--main-color);
+    }
+    to {
+        outline: 15px solid rgba(0, 255, 255, 0);
+    }
+}
+
+/* Acessibilidade: se o usuário não quer animações, desliga o pulso */
+@media (prefers-reduced-motion: reduce) {
+    .logo img {
+        animation: none;
+    }
+}
+
+
+/* ================= NAVBAR (desktop) ================= */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.navbar a {
+    position: relative;
+
+    font-family: var(--font-display);
+    font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+    font-weight: 500;
+    color: var(--text-color);
+    white-space: nowrap;
+
+    padding-bottom: 4px;
+    border-bottom: 3px solid transparent;
+
+    transition: color var(--transition-base),
+                border-color var(--transition-base);
+}
+
+.navbar a:hover {
+    color: var(--main-color);
+    border-bottom-color: var(--main-color);
+}
+
+.navbar a.active {
+    color: var(--main-color);
+    border-bottom-color: var(--main-color);
+    font-weight: bold;
+}
+
+
+/* ================= MENU HAMBURGUER ================= */
+
+#menu-icon {
+    display: none;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--main-color);
+    cursor: pointer;
+
+    transition: transform var(--transition-base);
+}
+
+#menu-icon:hover {
+    transform: scale(1.1);
+}
+
+
+/* ============================================================
+   RESPONSIVO — MENU MOBILE
+   ============================================================ */
+
+/* --- HOME: menu quebra em 910px --- */
+@media (max-width: 910px) {
+
+    body:not(.pg-projetos) #menu-icon {
+        display: block;
+    }
+
+    body:not(.pg-projetos) .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: min(300px, 70%);
+
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+
+        border-left: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+        border-bottom-left-radius: 2rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        transform: translateX(110%);
+        transition: transform var(--transition-base);
+    }
+
+    body:not(.pg-projetos) .navbar.active {
+        transform: translateX(0);
+    }
+
+    body:not(.pg-projetos) .navbar a {
+        margin: 1.5rem 0;
+        font-size: 1.1rem;
+    }
+}
+
+
+/* --- PROJETOS: menu tem mais itens, quebra em 1320px --- */
+@media (max-width: 1320px) {
+
+    .pg-projetos #menu-icon {
+        display: block;
+        font-size: 2.8rem;
+    }
+
+    .pg-projetos .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: min(320px, 75%);
+
+        background: rgba(3, 12, 22, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+
+        border-left: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+        border-bottom-left-radius: 2rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        transform: translateX(110%);
+        transition: transform var(--transition-base);
+    }
+
+    .pg-projetos .navbar.active {
+        transform: translateX(0);
+    }
+
+    .pg-projetos .navbar a {
+        margin: 1.2rem 0;
+        font-size: 1.05rem;
+    }
+}
+
+
+/* ============================================================
+   MOBILE PEQUENO — ajustes finos
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+    .menu {
+        padding: 0.6rem 0;
+    }
+
+    .logo img {
+        width: 40px;
+        padding: 3px;
+    }
+
+    .logo p {
+        font-size: 0.95rem;
+    }
+
+    body:not(.pg-projetos) .navbar,
+    .pg-projetos .navbar {
+        width: 85%;
+    }
+
+    body:not(.pg-projetos) .navbar a,
+    .pg-projetos .navbar a {
+        font-size: 1rem;
+        margin: 1rem 0;
+    }
+}

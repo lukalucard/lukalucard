@@ -1,0 +1,369 @@
+/* ============================================================
+   style.css — Seções específicas da home
+   (Sobre, Especialidades, Contato, Footer)
+   ============================================================ */
+
+
+/* ============================================================
+   SOBRE
+   ============================================================ */
+
+.sobre-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: clamp(2rem, 5vw, 5rem);
+    position: relative;
+    z-index: 2;
+}
+
+.sobre-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: clamp(2rem, 4vw, 4rem);
+
+    width: 100%;
+    padding: clamp(1.5rem, 3vw, 2rem);
+
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    box-shadow: var(--shadow-glow);
+}
+
+.sobre-card_img img {
+    width: clamp(150px, 20vw, 250px);
+}
+
+.sobre-card_txt {
+    flex: 1; /* ocupa o espaço restante */
+}
+
+.sobre-card_txt p {
+    line-height: 1.8;
+}
+
+
+/* ============================================================
+   ESPECIALIDADES
+   ============================================================ */
+
+.box-especialidades {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: clamp(2rem, 4vw, 4rem);
+}
+
+.box-especialidades_card {
+    display: flex;
+    flex: 1 1 400px;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+
+    max-width: 600px;
+    padding: 2rem 1rem;
+
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    box-shadow: var(--shadow-glow);
+}
+
+.box-especialidades_card h3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
+    text-align: center;
+}
+
+.especialidades-txt p {
+    line-height: 2;
+    margin-bottom: 1.5rem;
+}
+
+.especialidades-txt p:last-child {
+    margin-bottom: 0;
+}
+
+.especialidades-txt span {
+    display: inline-block;
+
+    color: var(--main-color);
+    background: rgba(255, 255, 255, 0.15);
+
+    padding: 4px 10px;
+    border-radius: 10px;
+
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+
+/* ============================================================
+   CONTATO
+   ============================================================ */
+
+.contato-container {
+    padding: clamp(2rem, 5vw, 5rem) 0;
+}
+
+.contato-principal {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    padding: 2rem;
+    margin-bottom: 60px;
+
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    box-shadow: var(--shadow-glow);
+    text-align: center;
+
+    transition: box-shadow var(--transition-base);
+}
+
+.contato-principal > div {
+    width: 100%;
+    max-width: 400px;
+}
+
+.contato-principal p {
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.contato-principal a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    max-width: 100%;
+    padding: 0.5rem 0;
+
+    color: var(--text-color);
+    font-size: 1rem;
+
+    word-break: break-word;
+    overflow-wrap: anywhere;
+
+    transition: color var(--transition-base);
+}
+
+.contato-principal a:hover {
+    color: var(--main-color);
+    text-decoration: underline;
+}
+
+.contato-principal a i {
+    color: var(--main-color);
+    font-size: 1.4rem;
+    flex-shrink: 0;
+
+    transition: color var(--transition-base);
+}
+
+.contato-principal a:hover i {
+    color: var(--text-color);
+}
+
+
+/* ================= SOCIAL ================= */
+
+.social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.social-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.social-card a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 80px;
+    height: 80px;
+
+    color: var(--main-color);
+    font-size: 50px;
+
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+
+    transition: transform var(--transition-base),
+                background var(--transition-base),
+                color var(--transition-base),
+                box-shadow var(--transition-base);
+}
+
+.social-card a:hover {
+    transform: scale(1.15) translateY(-8px);
+    background-color: var(--main-color);
+    color: #000000;
+    box-shadow: var(--shadow-glow-lg);
+}
+
+.social-card p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.footer {
+    padding: 5rem 0;
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: var(--shadow-glow-lg);
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer .list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+
+    list-style: none;
+    text-align: center;
+}
+
+.footer .list li {
+    display: inline-block;
+}
+
+.footer .list li a {
+    display: inline-block;
+    padding: 4px 8px;
+
+    color: var(--text-color);
+    font-size: 1rem;
+
+    border-bottom: 3px solid transparent;
+
+    transition: color var(--transition-base),
+                border-color var(--transition-base);
+}
+
+.footer .list li a:hover {
+    color: var(--main-color);
+    border-bottom-color: var(--main-color);
+}
+
+.footer .copyright {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+
+/* ============================================================
+   RESPONSIVO
+   ============================================================ */
+
+/* --- Tablet grande / notebook pequeno --- */
+@media (max-width: 1100px) {
+
+    .contato-principal {
+        flex-direction: column;
+    }
+
+    .footer {
+        padding: 3rem 5%;
+    }
+}
+
+
+/* --- Tablet / mobile landscape --- */
+@media (max-width: 910px) {
+
+    /* Sobre vira coluna */
+    .sobre-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-card_reverse {
+        flex-direction: column-reverse;
+    }
+
+    .sobre-card_img img {
+        width: clamp(120px, 25vw, 180px);
+    }
+
+    /* Especialidades centraliza */
+    .box-especialidades_card {
+        text-align: center;
+    }
+
+    /* Contato empilha */
+    .contato-principal {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    /* Social — diminui ícones */
+    .social-card a {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+}
+
+
+/* --- Mobile --- */
+@media (max-width: 600px) {
+
+    .social {
+        justify-content: center;
+    }
+
+    .footer .list {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+
+/* --- Mobile pequeno --- */
+@media (max-width: 425px) {
+
+    .contato-principal {
+        padding: 1.5rem 1rem;
+    }
+
+    .social {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-card {
+        flex-direction: row;
+        gap: 1rem;
+    }
+}

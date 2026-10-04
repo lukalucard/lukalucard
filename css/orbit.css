@@ -1,0 +1,284 @@
+/* ============================================================
+   orbit.css — Orbit unificado (home + projetos)
+   Substitui: hero.css + projetos-hero.css
+   ============================================================ */
+
+
+/* ================= CONTAINER ================= */
+
+.orbit-container {
+    position: relative;
+
+    /* Quadrado perfeito responsivo */
+    width: clamp(280px, 60vw, 620px);
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    perspective: 800px;
+}
+
+
+/* ================= CENTRO ================= */
+
+.orbit-center {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+/* Anel pulsante em volta do centro */
+.orbit-center::before {
+    content: "";
+    position: absolute;
+
+    width: calc(70% + 60px);
+    aspect-ratio: 1 / 1;
+
+    border-radius: 50%;
+    border: 2px solid rgba(0, 200, 255, 0.35);
+    box-shadow:
+        0 0 25px rgba(0, 200, 255, 0.35),
+        inset 0 0 25px rgba(0, 200, 255, 0.15);
+
+    animation: pulse-orbit 4s ease-in-out infinite;
+
+    pointer-events: none; /* não bloqueia cliques */
+}
+
+@keyframes pulse-orbit {
+    0% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+}
+
+/* Imagem/avatar central (só existe na home) */
+.orbit-center img {
+    z-index: 10;
+    width: 65%;
+    max-width: 400px;
+
+    border-radius: 50%;
+    background: rgba(0, 123, 255, 0.25);
+    border: 2px solid rgba(0, 123, 255, 0.6);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 0 18px rgba(0, 123, 255, 0.6),
+        0 0 36px rgba(0, 150, 255, 0.12);
+
+    cursor: pointer;
+    transition: transform var(--transition-base),
+                background var(--transition-base);
+}
+
+.orbit-center img:hover {
+    transform: scale(1.08);
+    background: rgba(0, 140, 255, 0.36);
+}
+
+
+/* ================= TRACK (área onde os itens giram) ================= */
+
+.orbit {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none; /* deixa os cliques passarem pro <a> */
+    z-index: 20;
+}
+
+
+/* ================= ITEM (wrapper de cada botão) ================= */
+
+.orbit-item {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 0;
+    height: 0;
+
+    pointer-events: none;
+    transform-origin: center center;
+}
+
+
+/* ================= BOTÃO ORBITAL ================= */
+
+.orbit-item a {
+    /* Tamanho responsivo */
+    --size: clamp(5rem, 12vw, 8rem);
+    width: var(--size);
+    height: var(--size);
+
+    /* Posicionamento */
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    /* Aparência */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px;
+    text-align: center;
+    word-break: break-word;
+    line-height: 1.1;
+
+    font-family: var(--font-display);
+    font-size: clamp(0.5rem, 1.2vw, 1.1rem);
+    color: #bfe8ff;
+    text-decoration: none;
+
+    border-radius: 50%;
+    border: 1.5px solid rgba(0, 140, 255, 0.5);
+    background: rgba(0, 140, 255, 0.18);
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    box-shadow:
+        0 0 10px rgba(0, 123, 255, 0.35),
+        inset 0 0 8px rgba(0, 123, 255, 0.12);
+
+    overflow: hidden;
+    pointer-events: auto;
+
+    transform-origin: center center;
+    z-index: 30;
+
+    /* Transição — o transform é animado via JS, então só transitiona o resto */
+    transition: background var(--transition-fast),
+                color var(--transition-fast),
+                box-shadow var(--transition-fast);
+
+    will-change: transform; /* performance */
+}
+
+.orbit-item a:hover {
+    background: rgba(0, 170, 255, 0.45);
+    color: #ffffff;
+    box-shadow:
+        0 0 22px rgba(0, 200, 255, 0.7),
+        0 0 48px rgba(0, 200, 255, 0.35),
+        inset 0 0 12px rgba(0, 140, 255, 0.25);
+}
+
+/* Aura energética (pulso suave via pseudo-elemento) */
+.orbit-item a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    border-radius: 50%;
+    pointer-events: none;
+
+    box-shadow: 0 0 18px rgba(0, 170, 255, 0.12);
+    transition: box-shadow var(--transition-slow);
+}
+
+.orbit-item a:hover::after {
+    box-shadow: 0 0 36px rgba(0, 200, 255, 0.35);
+}
+
+
+/* ============================================================
+   ACESSIBILIDADE
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .orbit-center::before {
+        animation: none;
+    }
+}
+
+
+/* ============================================================
+   RESPONSIVO
+   ============================================================ */
+
+/* --- Mobile médio --- */
+@media (max-width: 650px) {
+
+    .orbit-container {
+        width: 100%;
+        max-width: 420px; /* evita estourar em telas pequenas largas */
+    }
+
+    .orbit-center::before {
+        width: 70%;
+    }
+
+    .orbit-center img {
+        width: 60%;
+    }
+}
+
+
+/* --- Mobile pequeno --- */
+@media (max-width: 400px) {
+
+    .orbit-container {
+        max-width: 340px;
+    }
+
+    .orbit-item a {
+        /* Botões um pouco menores pra caber bem */
+        --size: clamp(4.2rem, 20vw, 5.5rem);
+        font-size: 0.7rem;
+        padding: 4px;
+    }
+}
+
+
+/* --- Páginas sem imagem central (projetos.html) ---
+   O .orbit-center vazio vira um pequeno indicador clicável
+   para pausar/retomar a rotação. */
+
+.orbit-center:empty {
+    /* Sem conteúdo */
+}
+
+.orbit-center:empty::after {
+    content: "";
+    position: absolute;
+
+    width: 30%;
+    aspect-ratio: 1 / 1;
+
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(0, 200, 255, 0.25) 0%,
+        rgba(0, 200, 255, 0.05) 60%,
+        transparent 100%
+    );
+
+    box-shadow:
+        0 0 20px rgba(0, 200, 255, 0.35),
+        inset 0 0 12px rgba(0, 200, 255, 0.2);
+
+    animation: pulse-orbit 4s ease-in-out infinite;
+    pointer-events: none;
+}

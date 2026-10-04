@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ================= SEO ================= -->
+    <title>Luka Lucard | Desenvolvedor Front-End & Designer</title>
+    <meta name="description" content="Portfólio de Luka Lucard — Desenvolvedor Front-End, Designer Gráfico, Editor de Vídeo, Motion Designer e Modelador 3D. Transformo ideias em projetos incríveis.">
+    <meta name="author" content="Luiz Carlos (Luka Lucard)">
+    <meta name="keywords" content="front-end, web designer, designer gráfico, editor de vídeo, motion designer, modelagem 3d, blender, portfólio">
+
+    <!-- Open Graph (compartilhamento em redes sociais) -->
+    <meta property="og:title" content="Luka Lucard | Portfólio">
+    <meta property="og:description" content="Transformo ideias em projetos incríveis para impulsionar sua marca.">
+    <meta property="og:image" content="imagens/logo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- ================= FAVICON ================= -->
+    <link rel="shortcut icon" href="imagens/logo.png" type="image/x-icon">
+
+    <!-- ================= FONTES ================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+
+    <!-- ================= ÍCONES ================= -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- ================= CSS ================= -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/orbit.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/projetos.css">
+</head>
+
+<body>
+    <div class="scroll-bar"></div>
+
+    <canvas id="space-bg"></canvas>
+
+    <!-- ================= MENU ================= -->
+    <header class="menu">
+        <div class="menu-overlay"></div>
+
+        <div class="menu-container interface">
+            <a href="index.html" class="logo">
+                <img src="imagens/logo.png" alt="Logo Luka Lucard">
+                <p>LukaLucard</p>
+            </a>
+
+            <i class='bx bx-menu' id="menu-icon" aria-label="Abrir menu"></i>
+
+            <nav class="navbar" aria-label="Navegação principal">
+                <a href="#home">Home</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#especialidades">Especialidades</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home">
+        <div class="section-filter"></div>
+
+        <div class="hero-container interface">
+
+            <!-- Orbit unificado -->
+            <div class="orbit-container" data-orbit>
+                <div class="orbit-center">
+                    <img src="imagens/img-hero-2.jpg" alt="Foto de Luka Lucard">
+                </div>
+
+                <div class="orbit">
+                    <div class="orbit-item"><a href="#web-designer">Web Designer</a></div>
+                    <div class="orbit-item"><a href="#designer-grafico">Designer Gráfico</a></div>
+                    <div class="orbit-item"><a href="#editor-videos">Editor de Vídeo</a></div>
+                    <div class="orbit-item"><a href="#motion-designer">Motion Designer</a></div>
+                    <div class="orbit-item"><a href="#modelador-3d">Modelador 3D</a></div>
+                </div>
+            </div>
+
+            <div class="hero-txt">
+                <p>
+                    Meu objetivo é transformar ideias em projetos incríveis para
+                    impulsionar sua marca, sempre aberto a aprender e evoluir,
+                    combinando criatividade com uma busca constante por
+                    aprimoramento técnico.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= SOBRE ================= -->
+    <section class="sobre" id="sobre">
+        <div class="section-filter"></div>
+
+        <div class="sobre-container interface">
+            <h2 class="titulo">Sobre Mim</h2>
+
+            <div class="sobre-card">
+                <div class="sobre-card_img">
+                    <img src="imagens/icon-focado.png" alt="Ícone foco">
+                </div>
+                <div class="sobre-card_txt">
+                    <p>
+                        Oi, meu nome é Luiz Carlos (LukaLucard)! Eu sou um
+                        desenvolvedor front-end em início de carreira,
+                        <span>focado</span> em criar interfaces web modernas e
+                        responsivas. Com habilidades em HTML, CSS e JavaScript,
+                        eu estou sempre buscando aprimorar minhas técnicas e
+                        aprender novas tecnologias para oferecer soluções
+                        eficazes e visualmente atraentes. Minha paixão por
+                        desenvolvimento me motiva a explorar as melhores
+                        práticas de design e usabilidade, garantindo que cada
+                        projeto em que trabalho seja funcional e esteticamente
+                        agradável.
+                    </p>
+                </div>
+            </div>
+
+            <div class="sobre-card sobre-card_reverse">
+                <div class="sobre-card_txt">
+                    <p>
+                        Além de minhas <span>habilidades</span> em front-end, eu
+                        também possuo um sólido conhecimento em ferramentas de
+                        design, edição de vídeos, Motion Design e modelagem 3D.
+                        Eu sou proficiente no uso do Photoshop para criação e
+                        edição de imagens, After Effects para Motion Design,
+                        Premiere para edição de vídeos e Blender para modelagem
+                        3D. Essa combinação de habilidades me permite trazer
+                        uma abordagem multidisciplinar aos meus projetos,
+                        adicionando camadas de criatividade e inovação às
+                        minhas criações digitais.
+                    </p>
+                </div>
+                <div class="sobre-card_img">
+                    <img src="imagens/icon-habilidade.png" alt="Ícone habilidades">
+                </div>
+            </div>
+
+            <div class="sobre-card">
+                <div class="sobre-card_img">
+                    <img src="imagens/icon-comprometido.png" alt="Ícone compromisso">
+                </div>
+                <div class="sobre-card_txt">
+                    <p>
+                        Com um olhar atento aos detalhes e uma dedicação
+                        contínua ao aprendizado, eu estou
+                        <span>comprometido</span> em evoluir como profissional e
+                        contribuir para o sucesso dos projetos em que me
+                        envolvo. Eu estou preparado para enfrentar novos
+                        desafios no mundo do desenvolvimento web e do design
+                        digital, sempre buscando excelência em tudo o que faço.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ESPECIALIDADES ================= -->
+    <section class="especialidades" id="especialidades">
+        <div class="section-filter"></div>
+
+        <div class="especialidades-container interface">
+            <h2 class="titulo">Especialidades</h2>
+
+            <div class="box-especialidades">
+
+                <div class="box-especialidades_card web-designer">
+                    <h3>Web Designer</h3>
+                    <div class="especialidades-txt">
+                        <p>
+                            <span>Web Designer:</span> Com conhecimento no
+                            desenvolvimento de sites e interfaces digitais
+                            utilizando HTML, CSS e JavaScript, focando na
+                            criação de páginas organizadas, funcionais e
+                            visualmente atrativas. Também utilizo WordPress
+                            para criação e gerenciamento de sites, adaptando
+                            layouts e conteúdos de acordo com a necessidade de
+                            cada projeto.
+                        </p>
+                        <p>
+                            Tenho conhecimento na estruturação de páginas web,
+                            estilização de interfaces, criação de layouts
+                            responsivos, personalização de sites em WordPress
+                            e uso de ferramentas de Inteligência Artificial
+                            para otimizar processos de criação, conteúdo e
+                            desenvolvimento, buscando sempre unir design,
+                            funcionalidade e boa experiência para o usuário.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="box-especialidades_card designer-grafico">
+                    <h3>Designer Gráfico</h3>
+                    <div class="especialidades-txt">
+                        <p>
+                            <span>Designer Gráfico:</span> Com conhecimento na
+                            criação de materiais visuais voltados para
+                            identidade de marca, marketing e comunicação
+                            digital. Utilizo ferramentas como Adobe Photoshop,
+                            Adobe Illustrator, Adobe InDesign e Canva para
+                            desenvolver projetos que combinam estética,
+                            organização visual e clareza na comunicação.
+                        </p>
+                        <p>
+                            Tenho conhecimento na criação de logotipos,
+                            identidade visual, flyers, artes para redes
+                            sociais, materiais promocionais e diagramação de
+                            layouts, buscando produzir peças visuais modernas,
+                            bem estruturadas e alinhadas com o objetivo de
+                            cada projeto e com a comunicação da marca.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="box-especialidades_card editor-video">
+                    <h3>Editor de Vídeo</h3>
+                    <div class="especialidades-txt">
+                        <p>
+                            <span>Editor de Vídeo:</span> Com conhecimento em
+                            edição, montagem e finalização de conteúdos
+                            audiovisuais para diferentes formatos e
+                            plataformas. Utilizo ferramentas como CapCut,
+                            DaVinci Resolve e Adobe Premiere Pro, focando na
+                            criação de vídeos dinâmicos, bem estruturados e
+                            visualmente atrativos.
+                        </p>
+                        <p>
+                            Tenho conhecimento em edição de cortes,
+                            sincronização de áudio, transições, organização de
+                            cenas e ajustes básicos de cor, buscando produzir
+                            vídeos com ritmo, clareza e boa apresentação
+                            visual, alinhados com o objetivo do projeto e com
+                            a identidade da marca ou do conteúdo.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="box-especialidades_card motion-designer">
+                    <h3>Motion Designer</h3>
+                    <div class="especialidades-txt">
+                        <p>
+                            <span>Motion Designer:</span> Com conhecimento na
+                            criação de animações e elementos visuais em
+                            movimento para conteúdos digitais. Utilizo o Adobe
+                            After Effects para desenvolver projetos que
+                            combinam design, ritmo e movimento, criando peças
+                            visuais mais dinâmicas e atrativas.
+                        </p>
+                        <p>
+                            Tenho conhecimento na criação de flyers animados,
+                            animações para redes sociais, motion graphics,
+                            animação de logotipos, transições, efeitos visuais
+                            e composição de elementos gráficos, buscando
+                            produzir conteúdos que reforcem a comunicação
+                            visual e tragam mais impacto e dinamismo para
+                            marcas, campanhas e materiais digitais.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="box-especialidades_card modelador-3d">
+                    <h3>Modelador 3D</h3>
+                    <div class="especialidades-txt">
+                        <p>
+                            <span>Modelador 3D:</span> Com conhecimento na
+                            criação e desenvolvimento de modelos
+                            tridimensionais utilizando Blender. Trabalho na
+                            construção de elementos visuais para diferentes
+                            aplicações, combinando modelagem, composição de
+                            cena e animação.
+                        </p>
+                        <p>
+                            Tenho conhecimento na criação de personagens,
+                            desenvolvimento de assets 3D, modelagem de
+                            logotipos, maquetes eletrônicas e visualização de
+                            ambientes, incluindo design de interiores em 3D,
+                            além de animação de logotipos, motion em 3D e
+                            animação de objetos e elementos gráficos, buscando
+                            produzir projetos com boa estrutura visual,
+                            proporção, movimento e apresentação clara para
+                            diferentes tipos de uso digital.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PROJETOS ================= -->
+    <section class="projetos" id="projetos">
+        <div class="section-filter"></div>
+
+        <div class="projetos-container interface">
+            <h2 class="titulo">Projetos</h2>
+
+            <div class="box-projetos">
+
+                <!-- Web Designer -->
+                <div class="box-projetos_card" id="web-designer">
+                    <h3>Web Designer</h3>
+
+                    <div class="projetos-carousel">
+                        <div class="projetos-carousel_card projetos-carousel_scroll active"
+                             style="background-image: url('imagens/img-projetos/img-web/lukalucard.online.jpg');">
+                            <div class="projetos-carousel_item">
+                                <h4>LukaLucard</h4>
+                                <div class="projetos-carousel_descricao">
+                                    <p>Tecnologias Utilizadas:</p>
+                                    <div class="projetos-carousel_descricao-img">
+                                        <div class="projetos-carousel_img-txt">
+                                            <img src="imagens/img-projetos/img-web/html.png" alt="HTML">
+                                            <p>HTML</p>
+                                        </div>
+                                        <div class="projetos-carousel_img-txt">
+                                            <img src="imagens/img-projetos/img-web/css.png" alt="CSS">
+                                            <p>CSS</p>
+                                        </div>
+                                        <div class="projetos-carousel_img-txt">
+                                            <img src="imagens/img-projetos/img-web/js.png" alt="JavaScript">
+                                            <p>JS</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="projetos.html#web-designer" class="projetos-btn">
+                                    Ver Projetos
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="projetos-carousel_card projetos-carousel_scroll"
+                             style="background-image: url('imagens/img-projetos/img-web/gata-poderosa.jpeg');">
+                            <div class="projetos-carousel_item">
+                                <h4>gatapoderosa.com.br</h4>
+                                <div class="projetos-carousel_descricao">
+                                    <p>Tecnologias Utilizadas:</p>
+                                    <div class="projetos-carousel_descricao-img">
+                                        <div class="projetos-carousel_img-txt">
+                                            <img src="imagens/img-projetos/img-web/html.png" alt="HTML">
+                                            <p>HTML</p>
+                                        </div>
+                                        <div class="projetos-carousel_img-txt">
+                                            <img src="imagens/img-projetos/img-web/css.png" alt="CSS">
+                                            <p>CSS</p>
+                                        </div>
+                                        <div class="projetos-carousel_img-txt">
+                                            <img src="imagens/img-projetos/img-web/js.png" alt="JavaScript">
+                                            <p>JS</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="projetos.html#web-designer" class="projetos-btn">
+                                    Ver Projetos
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="projetos-carousel_card projetos-carousel_scroll"
+                             style="background-image: url('imagens/img-projetos/img-web/princesas-micro.jpeg');">
+                            <div class="projetos-carousel_item">
+                                <h4>princesasmicro.com.br</h4>
+                                <div class="projetos-carousel_descricao">
+                                    <p>Tecnologias Utilizadas:</p>
+                                    <div class="projetos-carousel_descricao-img">
+                                        <div class="projetos-carousel_img-txt">
+                                            <img src="imagens/img-projetos/img-web/html.png" alt="HTML">
+                                            <p>HTML</p>
+                                        </div>
+                                        <div class="projetos-carousel_img-txt">
+                                            <img src="imagens/img-projetos/img-web/css.png" alt="CSS">
+                                            <p>CSS</p>
+                                        </div>
+                                        <div class="projetos-carousel_img-txt">
+                                            <img src="imagens/img-projetos/img-web/js.png" alt="JavaScript">
+                                            <p>JS</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="projetos.html#web-designer" class="projetos-btn">
+                                    Ver Projetos
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="projetos_indicators-controls">
+                        <div class="projetos-controls">
+                            <button class="control-projetos_btn prev" aria-label="Projeto anterior">&#10094;</button>
+                        </div>
+
+                        <div class="projetos-indicators">
+                            <div class="projetos-indicator active" data-index="0"></div>
+                            <div class="projetos-indicator" data-index="1"></div>
+                            <div class="projetos-indicator" data-index="2"></div>
+                        </div>
+
+                        <div class="projetos-controls">
+                            <button class="control-projetos_btn next" aria-label="Próximo projeto">&#10095;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Designer Gráfico -->
+                <div class="box-projetos_card" id="designer-grafico">
+                    <h3>Designer Gráfico</h3>
+
+                    <div class="projetos-carousel">
+                        <div class="projetos-carousel_card projetos-carousel_scroll active"
+                             style="background-image: url('imagens/img-projetos/img-design/acai-conceito.png');">
+                            <div class="projetos-carousel_item">
+                                <h4>Açaí Conceito</h4>
+                                <div class="projetos-carousel_descricao">
+                                    <p>Ferramentas Utilizadas:</p>
+                                    <div class="projetos-carousel_descricao-img">
+                                        <div class="projetos-carousel_img-txt">
+                                            <img src="imagens/img-projetos/img-web/html.png" alt="Photoshop">
+                                            <p>Photoshop</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="projetos.html#designer-grafico" class="projetos-btn">
+                                    Ver Projetos
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="projetos-carousel_card projetos-carousel_scroll"
+                             style="background-image: url('imagens/img-projetos/img-design/mapa-mental-dengue.jpg');">
+                            <div class="projetos-carousel_item">
+                                <h4>Mapa Mental — Dengue</h4>
+                                <div class="projetos-carousel_descricao">
+                                    <p>Ferramentas Utilizadas:</p>
+                                    <div class="projetos-carousel_descricao-img">
+                                        <div class="projetos-carousel_img-txt">
+                                            <img src="imagens/img-projetos/img-web/html.png" alt="Illustrator">
+                                            <p>Illustrator</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="projetos.html#designer-grafico" class="projetos-btn">
+                                    Ver Projetos
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="projetos-carousel_card projetos-carousel_scroll"
+                             style="background-image: url('imagens/img-projetos/img-design/noite-suprema.jpg');">
+                            <div class="projetos-carousel_item">
+                                <h4>Noite Suprema</h4>
+                                <div class="projetos-carousel_descricao">
+                                    <p>Ferramentas Utilizadas:</p>
+                                    <div class="projetos-carousel_descricao-img">
+                                        <div class="projetos-carousel_img-txt">
+                                            <img src="imagens/img-projetos/img-web/html.png" alt="Photoshop">
+                                            <p>Photoshop</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="projetos.html#designer-grafico" class="projetos-btn">
+                                    Ver Projetos
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="projetos_indicators-controls">
+                        <div class="projetos-controls">
+                            <button class="control-projetos_btn prev" aria-label="Projeto anterior">&#10094;</button>
+                        </div>
+
+                        <div class="projetos-indicators">
+                            <div class="projetos-indicator active" data-index="0"></div>
+                            <div class="projetos-indicator" data-index="1"></div>
+                            <div class="projetos-indicator" data-index="2"></div>
+                        </div>
+
+                        <div class="projetos-controls">
+                            <button class="control-projetos_btn next" aria-label="Próximo projeto">&#10095;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Editor de Vídeo -->
+                <div class="box-projetos_card" id="editor-videos">
+                    <h3>Editor de Vídeo</h3>
+                    <div class="projetos-carousel"></div>
+                    <p class="card-em-breve">Em breve novos projetos.</p>
+                </div>
+
+                <!-- Motion Designer -->
+                <div class="box-projetos_card" id="motion-designer">
+                    <h3>Motion Designer</h3>
+                    <div class="projetos-carousel"></div>
+                    <p class="card-em-breve">Em breve novos projetos.</p>
+                </div>
+
+                <!-- Modelador 3D -->
+                <div class="box-projetos_card" id="modelador-3d">
+                    <h3>Modelador 3D</h3>
+                    <div class="projetos-carousel"></div>
+                    <p class="card-em-breve">Em breve novos projetos.</p>
+                </div>
+
+                <a href="projetos.html" class="projetos-btn_principal">
+                    Ir Para Projetos
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CONTATO ================= -->
+    <section class="contato" id="contato">
+        <div class="section-filter"></div>
+
+        <h2 class="titulo">Contatos</h2>
+
+        <div class="contato-container interface">
+            <div class="contato-principal">
+
+                <div class="whatsapp">
+                    <p>Meu WhatsApp para contato profissional</p>
+                    <a href="https://wa.me/5562982309243" target="_blank" rel="noopener">
+                        <i class='bx bxl-whatsapp'></i>
+                        (62) 98230-9243
+                    </a>
+                </div>
+
+                <div class="email">
+                    <p>Meu e-mail para contato</p>
+                    <a href="mailto:luizcarlosalucard28@gmail.com">
+                        <i class='bx bx-envelope'></i>
+                        luizcarlosalucard28@gmail.com
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="social">
+
+                <div class="social-card">
+                    <a href="https://www.facebook.com/profile.php?id=100077730785983&locale=pt_BR"
+                       target="_blank" rel="noopener" aria-label="Facebook">
+                        <i class='bx bxl-facebook'></i>
+                    </a>
+                    <p>Facebook</p>
+                </div>
+
+                <div class="social-card">
+                    <a href="https://www.instagram.com/luka_lucard/"
+                       target="_blank" rel="noopener" aria-label="Instagram">
+                        <i class='bx bxl-instagram'></i>
+                    </a>
+                    <p>Instagram</p>
+                </div>
+
+                <div class="social-card">
+                    <a href="https://github.com/lukalucard"
+                       target="_blank" rel="noopener" aria-label="GitHub">
+                        <i class='bx bxl-github'></i>
+                    </a>
+                    <p>GitHub</p>
+                </div>
+
+                <div class="social-card">
+                    <a href="https://www.linkedin.com/in/luiz-carlos-sim%C3%A3o-dos-santos-085a14310/"
+                       target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class='bx bxl-linkedin'></i>
+                    </a>
+                    <p>LinkedIn</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-container">
+            <ul class="list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#especialidades">Especialidades</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+
+            <p class="copyright">
+                &copy; Todos os direitos reservados para LukaLucard
+            </p>
+        </div>
+    </footer>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/section.js"></script>
+    <script src="js/body.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/orbit.js"></script>
+    <script src="js/projetos.js"></script>
+</body>
+</html>

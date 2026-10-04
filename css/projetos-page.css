@@ -1,0 +1,85 @@
+/* ============================================================
+   projetos-page.css — Estilos exclusivos da projetos.html
+   (Categorias de projeto em tela cheia)
+   ============================================================ */
+
+
+/* ============================================================
+   SEÇÕES DE CATEGORIA
+   ============================================================ */
+
+/* Todas as seções de categoria (web-designer, designer-grafico, etc.)
+   usam esta mesma classe. O que as diferencia é o id. */
+.categoria-projeto {
+    min-height: 60vh;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.categoria-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+/* ============================================================
+   CARD VAZIO ("em construção")
+   ============================================================ */
+
+/* Card único que ocupa espaço centralizado quando não há projetos */
+.categoria-projeto .box-projetos_card {
+    min-height: 320px;
+    max-height: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 3rem 2rem;
+}
+
+.categoria-projeto .card-em-breve {
+    text-align: center;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: var(--text-color);
+    opacity: 0.75;
+
+    max-width: 480px;
+    line-height: 1.6;
+}
+
+
+/* ============================================================
+   RESPONSIVO
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    .categoria-projeto {
+        min-height: 50vh;
+    }
+
+    .categoria-projeto .box-projetos_card {
+        min-height: 260px;
+        padding: 2rem 1.25rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .categoria-projeto {
+        min-height: 45vh;
+    }
+
+    .categoria-projeto .box-projetos_card {
+        min-height: 220px;
+        padding: 1.5rem 1rem;
+    }
+}

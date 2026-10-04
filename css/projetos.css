@@ -1,0 +1,490 @@
+/* ============================================================
+   projetos.css — Cards de projeto + Carrossel
+   Usado em: index.html (home) e projetos.html
+   ============================================================ */
+
+
+/* ============================================================
+   CONTAINER DOS CARDS
+   ============================================================ */
+
+.box-projetos {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 4vw, 3rem);
+}
+
+
+/* ============================================================
+   CARD DE PROJETO
+   ============================================================ */
+
+.box-projetos_card {
+    display: flex;
+    flex-direction: column;
+
+    /* Altura fluida com limites */
+    min-height: 500px;
+    max-height: 85vh;
+    height: auto;
+
+    padding: clamp(1rem, 2vw, 1.5rem);
+
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    box-shadow: var(--shadow-glow);
+
+    position: relative;
+    overflow: hidden;
+}
+
+.box-projetos_card h3 {
+    width: fit-content;
+    min-width: 200px;
+    max-width: 100%;
+
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-weight: 500;
+    text-align: center;
+
+    border-radius: 10px;
+    background: rgba(0, 140, 255, 0.12);
+}
+
+
+/* ============================================================
+   CARROSSEL
+   ============================================================ */
+
+.projetos-carousel {
+    flex: 1;
+    width: 100%;
+
+    overflow: hidden;
+    border-radius: 10px;
+
+    position: relative;
+}
+
+/* Cada slide */
+.projetos-carousel_card {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-size: cover;
+    background-position: center top;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--text-color);
+    text-align: center;
+
+    opacity: 0;
+    overflow: hidden;
+
+    transition: opacity 1s ease-in-out;
+}
+
+.projetos-carousel_card.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* Efeito "scroll" da imagem de fundo no hover */
+.projetos-carousel_scroll {
+    transition: background-position 4s ease;
+}
+
+.projetos-carousel_scroll:hover {
+    background-position: center bottom;
+    transition: background-position 6s linear;
+}
+
+
+/* ============================================================
+   CONTEÚDO INTERNO DO CARD (item)
+   ============================================================ */
+
+.projetos-carousel_item {
+    max-width: 600px;
+    padding: clamp(1.5rem, 3vw, 2rem);
+
+    background-color: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 2px solid transparent;
+    border-radius: 20px;
+
+    position: relative;
+    z-index: 10;
+
+    text-align: center;
+    cursor: pointer;
+
+    transition: border-color var(--transition-base),
+                transform var(--transition-base);
+}
+
+.projetos-carousel_item:hover {
+    border-color: var(--main-color);
+    transform: translateY(-4px);
+}
+
+.projetos-carousel_item h4 {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    margin-bottom: 1rem;
+}
+
+.projetos-carousel_item p {
+    font-size: clamp(1rem, 1.8vw, 1.3rem);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+
+/* ============================================================
+   TECNOLOGIAS (ícones dentro do slide)
+   ============================================================ */
+
+.projetos-carousel_descricao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.projetos-carousel_descricao-img {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.projetos-carousel_img-txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.projetos-carousel_img-txt img {
+    width: clamp(35px, 6vw, 50px);
+    height: auto;
+}
+
+.projetos-carousel_img-txt p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+
+/* ============================================================
+   BOTÃO "VER PROJETOS"
+   ============================================================ */
+
+.projetos-btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+
+    background: var(--main-color);
+    color: var(--text-color);
+
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 500;
+
+    border-radius: 10px;
+    border: 2px solid transparent;
+
+    transition: background var(--transition-base),
+                box-shadow var(--transition-base),
+                transform var(--transition-base);
+}
+
+.projetos-btn:hover {
+    background: var(--second-color);
+    box-shadow: 0 0 25px var(--main-color);
+    transform: translateY(-2px);
+}
+
+
+/* ============================================================
+   CONTROLES E INDICADORES
+   ============================================================ */
+
+.projetos_indicators-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2rem);
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+}
+
+.projetos-indicators {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.projetos-indicator {
+    width: 14px;
+    height: 14px;
+
+    border-radius: 50%;
+    background-color: var(--second-color);
+
+    cursor: pointer;
+    transition: background var(--transition-base),
+                box-shadow var(--transition-base),
+                transform var(--transition-base);
+}
+
+.projetos-indicator:hover {
+    background-color: var(--main-color);
+}
+
+.projetos-indicator.active {
+    background-color: var(--main-color);
+    box-shadow: 0 0 20px var(--main-color);
+    transform: scale(1.25);
+}
+
+.projetos-controls {
+    display: flex;
+    gap: 1rem;
+}
+
+.control-projetos_btn {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: var(--main-color);
+    color: #050810;
+
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: background var(--transition-base),
+                transform var(--transition-base),
+                box-shadow var(--transition-base);
+}
+
+.control-projetos_btn:hover {
+    background-color: var(--second-color);
+    transform: scale(1.08);
+    box-shadow: 0 0 18px var(--main-color);
+}
+
+/* Acessibilidade: foco visível apenas para teclado */
+.control-projetos_btn:focus {
+    outline: none;
+}
+
+.control-projetos_btn:focus-visible {
+    outline: 2px solid var(--main-color);
+    outline-offset: 3px;
+}
+
+
+/* ============================================================
+   BOTÃO PRINCIPAL "IR PARA PROJETOS"
+   ============================================================ */
+
+.projetos-btn_principal {
+    display: block;
+    width: fit-content;
+    min-width: 260px;
+    max-width: 100%;
+
+    padding: 1rem 2rem;
+    margin: auto;
+
+    color: var(--text-color);
+    background: transparent;
+
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    font-weight: 500;
+    text-align: center;
+
+    animation: pulse-outline 1.4s ease-in-out infinite;
+    transition: transform var(--transition-base),
+                background var(--transition-base);
+}
+
+.projetos-btn_principal:hover {
+    transform: scale(1.06);
+    background: rgba(0, 200, 255, 0.08);
+}
+
+
+/* ============================================================
+   KEYFRAME COMPARTILHADO (substitui "outline" antigo)
+   ============================================================ */
+
+@keyframes pulse-outline {
+    from {
+        outline: 0 solid var(--main-color);
+    }
+    to {
+        outline: 15px solid rgba(0, 255, 255, 0);
+    }
+}
+
+
+/* ============================================================
+   CARD "EM BREVE" (vazio)
+   ============================================================ */
+
+.box-projetos_card .card-em-breve {
+    text-align: center;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: var(--text-color);
+    opacity: 0.8;
+
+    margin: auto;
+    padding: 2rem;
+}
+
+
+/* ============================================================
+   ACESSIBILIDADE
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .projetos-carousel_scroll,
+    .projetos-carousel_card {
+        transition: none;
+    }
+
+    .projetos-btn_principal {
+        animation: none;
+    }
+}
+
+
+/* ============================================================
+   RESPONSIVO
+   ============================================================ */
+
+/* --- Tablet --- */
+@media (max-width: 768px) {
+
+    .box-projetos_card {
+        min-height: 480px;
+        max-height: none;
+        padding: 1rem;
+    }
+
+    .box-projetos_card h3 {
+        width: 100%;
+        font-size: 1.15rem;
+    }
+
+    .projetos-carousel_item {
+        width: 92%;
+        padding: 1.5rem;
+        border-radius: 15px;
+    }
+
+    .projetos-carousel_item h4 {
+        font-size: 1.3rem;
+    }
+
+    .projetos-carousel_item p {
+        font-size: 1.05rem;
+    }
+
+    .control-projetos_btn {
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+    }
+
+    .projetos-indicator {
+        width: 12px;
+        height: 12px;
+    }
+
+    .projetos-btn_principal {
+        width: 100%;
+        max-width: 300px;
+        font-size: 1.1rem;
+    }
+}
+
+
+/* --- Mobile --- */
+@media (max-width: 480px) {
+
+    .box-projetos_card {
+        min-height: 420px;
+    }
+
+    .projetos-carousel_item {
+        width: 95%;
+        padding: 1.2rem;
+        border-radius: 12px;
+    }
+
+    .projetos-carousel_item h4 {
+        font-size: 1.15rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .projetos-carousel_item p {
+        font-size: 0.95rem;
+        line-height: 1.4;
+        margin-bottom: 1rem;
+    }
+
+    .projetos-carousel_descricao-img {
+        gap: 1rem;
+    }
+
+    .projetos-carousel_img-txt img {
+        width: 35px;
+    }
+
+    .projetos-carousel_img-txt p {
+        font-size: 0.8rem;
+    }
+
+    .projetos_indicators-controls {
+        gap: 0.8rem;
+    }
+
+    .control-projetos_btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+
+    .projetos-indicator {
+        width: 10px;
+        height: 10px;
+    }
+}
