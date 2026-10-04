@@ -282,3 +282,23 @@
     animation: pulse-orbit 4s ease-in-out infinite;
     pointer-events: none;
 }
+
+/* ============================================================
+   HERO EM TELAS MENORES (empilha orbit + texto)
+   ============================================================ */
+
+@media (max-width: 1100px) {
+
+    .hero-container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .hero-txt {
+        width: 100%;
+    }
+
+    .hero-txt p {
+        text-align: center;
+    }
+}

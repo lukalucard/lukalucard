@@ -1,8 +1,40 @@
 /* ============================================================
-   style.css — Seções específicas da home
-   (Sobre, Especialidades, Contato, Footer)
+   style.css 
    ============================================================ */
 
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4rem);
+
+    position: relative;
+    z-index: 2;
+}
+
+.hero-txt {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: clamp(1rem, 2vw, 1.5rem);
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    box-shadow: var(--shadow-glow);
+}
+
+.hero-txt p {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 1.8vw, 1.5rem);
+    line-height: 1.5;
+    text-align: end;
+}
 
 /* ============================================================
    SOBRE
@@ -37,7 +69,7 @@
 }
 
 .sobre-card_txt {
-    flex: 1; /* ocupa o espaço restante */
+    flex: 1; 
 }
 
 .sobre-card_txt p {
@@ -316,12 +348,10 @@
         width: clamp(120px, 25vw, 180px);
     }
 
-    /* Especialidades centraliza */
     .box-especialidades_card {
         text-align: center;
     }
 
-    /* Contato empilha */
     .contato-principal {
         flex-direction: column;
         gap: 2rem;
