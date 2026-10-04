@@ -67,12 +67,13 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-body);
-    font-size: 1rem;               /* 16px base */
+    font-size: 1rem;
     line-height: 1.6;
     min-height: 100vh;
-    overflow-x: hidden;
 
-    /* Melhora renderização de fontes */
+    overflow-x: hidden;
+    overflow-x: clip;   
+
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
