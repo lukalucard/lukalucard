@@ -98,7 +98,7 @@ button {
 /* ================= SCROLLBAR (Webkit) ================= */
 
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -141,7 +141,7 @@ button {
     width: 100%;
     max-width: var(--interface-width);
     margin: 0 auto;
-    padding: 0 clamp(1rem, 4vw, 2rem);
+    padding: 0 clamp(1.25rem, 4vw, 2rem);
 }
 
 section {
