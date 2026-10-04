@@ -2,10 +2,9 @@
 // section.js — Animações de entrada com ScrollReveal
 // Recursos:
 //  - Guard clause: não quebra se ScrollReveal não carregar
-//  - Configurações centralizadas por seção
 //  - Detecta mobile para reduzir distância/tempo das animações
 //  - Respeita prefers-reduced-motion (acessibilidade)
-//  - Durações mais enxutas (antes tinham 2000ms)
+//  - Animações mais ágeis (durations + intervals menores)
 // ============================================================
 
 (function () {
@@ -35,15 +34,13 @@
     // ================= CONFIGURAÇÕES GLOBAIS =================
 
     const sr = ScrollReveal({
-        // Distâncias e durações ajustadas para mobile
-        distance: isMobile ? "40px" : "100px",
-        duration: isMobile ? 500 : 800,
-        easing: "ease-in-out",
-        reset: false,     // antes era true — reexecutava toda hora ao rolar
-        mobile: true,     // permite animações em telas pequenas
-        viewOffset: {
-            top: 80,
-        },
+        distance: isMobile ? "30px" : "60px",   // percurso curto
+        duration: isMobile ? 450 : 650,          // animação ágil
+        easing: "ease-out",                      // entrada mais natural
+        opacity: 0,
+        reset: false,
+        mobile: true,
+        viewOffset: { top: 150 },                // dispara ANTES de aparecer
     });
 
 
@@ -51,43 +48,41 @@
 
     sr.reveal(".hero-txt", {
         origin: "right",
-        distance: isMobile ? "40px" : "100px",
-        duration: 800,
-        delay: 200,
+        distance: isMobile ? "30px" : "60px",
+        duration: 700,
+        delay: 100,
     });
 
 
     // ================= SOBRE =================
 
     sr.reveal(".sobre-card", {
-        distance: isMobile ? "40px" : "100px",
-        duration: 800,
-        interval: 200,   // antes era 500 — muito lento
+        origin: "bottom",
+        distance: isMobile ? "30px" : "60px",
+        duration: 650,
+        interval: 80,   // cascata sutil, sem delay perceptível
     });
 
 
     // ================= ESPECIALIDADES =================
 
-    // Cards da esquerda
     sr.reveal(".web-designer, .editor-video, .modelador-3d", {
         origin: "left",
-        distance: isMobile ? "40px" : "100px",
-        duration: 600,
-        delay: 100,
+        distance: isMobile ? "30px" : "60px",
+        duration: 550,
+        interval: 80,
     });
 
-    // Cards da direita
     sr.reveal(".designer-grafico, .motion-designer", {
         origin: "right",
-        distance: isMobile ? "40px" : "100px",
-        duration: 600,
-        delay: 100,
+        distance: isMobile ? "30px" : "60px",
+        duration: 550,
+        interval: 80,
     });
 
-    // Títulos (entram por baixo, mais sutil)
     sr.reveal(".titulo", {
         origin: "bottom",
-        distance: "40px",
+        distance: "30px",
         duration: 500,
     });
 
@@ -96,16 +91,16 @@
 
     sr.reveal(".box-projetos_card", {
         origin: "bottom",
-        distance: isMobile ? "40px" : "80px",
-        duration: 700,
-        interval: 150,
+        distance: isMobile ? "30px" : "50px",
+        duration: 550,
+        interval: 60,   // efeito cascata quase simultâneo
     });
 
     sr.reveal(".projetos-btn_principal", {
         origin: "bottom",
-        distance: "40px",
-        duration: 600,
-        delay: 200,
+        distance: "30px",
+        duration: 500,
+        delay: 100,
     });
 
 
@@ -113,16 +108,16 @@
 
     sr.reveal(".contato-principal", {
         origin: "left",
-        distance: isMobile ? "40px" : "120px",
-        duration: 800,
-        delay: 100,
+        distance: isMobile ? "30px" : "60px",
+        duration: 650,
+        delay: 80,
     });
 
     sr.reveal(".social", {
         origin: "right",
-        distance: isMobile ? "40px" : "120px",
-        duration: 800,
-        delay: 100,
+        distance: isMobile ? "30px" : "60px",
+        duration: 650,
+        delay: 80,
     });
 
 
@@ -130,15 +125,15 @@
 
     sr.reveal(".categoria-projeto .titulo", {
         origin: "top",
-        distance: "40px",
+        distance: "30px",
         duration: 500,
     });
 
     sr.reveal(".categoria-projeto .box-projetos_card", {
         origin: "bottom",
-        distance: isMobile ? "40px" : "80px",
-        duration: 700,
-        interval: 150,
+        distance: isMobile ? "30px" : "50px",
+        duration: 550,
+        interval: 60,
     });
 
 })();
