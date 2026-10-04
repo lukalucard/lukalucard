@@ -321,6 +321,14 @@
 /* --- Tablet grande / notebook pequeno --- */
 @media (max-width: 1100px) {
 
+    .hero-txt {
+        width: 100%;
+    }
+
+    .hero-txt p {
+        text-align: center;
+    }
+
     .contato-principal {
         flex-direction: column;
     }
