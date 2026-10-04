@@ -12,7 +12,7 @@ const app = express();
 // Arquivos estáticos (HTML, CSS, JS, imagens)
 // IMPORTANTE: como o server está em backend/, precisamos subir uma pasta
 // ============================================================
-const frontendPath = path.join(__dirname, '..');
+const frontendPath = path.join(__dirname, '..', 'frontend');
 app.use(express.static(frontendPath));
 
 // Fallback: qualquer rota não encontrada devolve o index.html
