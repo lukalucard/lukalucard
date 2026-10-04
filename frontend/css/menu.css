@@ -164,16 +164,26 @@
     body:not(.pg-projetos) .navbar {
         position: absolute;
         top: 100%;
-        right: 0;
-        /* ... */
-        right: -100%;   /* ← esconde movendo pra fora */
-        transform: none;
+        right: -100%;
+        width: min(300px, 70%);
+
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+
+        border-left: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+        border-bottom-left-radius: 2rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
         transition: right var(--transition-base);
     }
 
     body:not(.pg-projetos) .navbar.active {
         right: 0;
-        transform: none;
     }
 
     body:not(.pg-projetos) .navbar a {
@@ -194,7 +204,7 @@
     .pg-projetos .navbar {
         position: absolute;
         top: 100%;
-        right: 0;
+        right: -100%;
         width: min(320px, 75%);
 
         background: rgba(3, 12, 22, 0.95);
@@ -209,12 +219,11 @@
         flex-direction: column;
         align-items: center;
 
-        transform: translateX(110%);
-        transition: transform var(--transition-base);
+        transition: right var(--transition-base);
     }
 
     .pg-projetos .navbar.active {
-        transform: translateX(0);
+        right: 0;
     }
 
     .pg-projetos .navbar a {
