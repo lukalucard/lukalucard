@@ -209,3 +209,10 @@ section > *:not(.section-filter) {
         scroll-behavior: auto !important;
     }
 }
+
+/* Esconde a barra de progresso em telas pequenas (mobile/tablet) */
+@media (max-width: 910px) {
+    .scroll-bar {
+        display: none;
+    }
+}
