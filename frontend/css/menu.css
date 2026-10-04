@@ -139,6 +139,7 @@
 #menu-icon {
     display: none;
     font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1;
     color: var(--main-color);
     cursor: pointer;
 
