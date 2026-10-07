@@ -141,15 +141,178 @@
     padding: clamp(2rem, 5vw, 5rem) 0;
 }
 
-.contato-principal {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
+/* ================= GRID PRINCIPAL ================= */
 
-    padding: 2rem;
-    margin-bottom: 60px;
+.contato-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 4vw, 3rem);
+}
+
+/* ================= FORMULÁRIO ================= */
+
+.contact-form-wrapper {
+    padding: clamp(1.5rem, 3vw, 2rem);
+
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    box-shadow: var(--shadow-glow);
+}
+
+.contact-form-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--main-color);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.contact-form-field label {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.contact-form-field label .optional {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    font-weight: 300;
+}
+
+.contact-form-field input,
+.contact-form-field textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+
+    background: rgba(0, 0, 0, 0.35);
+    color: var(--text-color);
+
+    border: 1.5px solid rgba(0, 200, 255, 0.25);
+    border-radius: 8px;
+
+    font-family: var(--font-body);
+    font-size: 1rem;
+
+    transition: border-color var(--transition-base),
+                box-shadow var(--transition-base);
+}
+
+.contact-form-field input::placeholder,
+.contact-form-field textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.contact-form-field input:focus,
+.contact-form-field textarea:focus {
+    outline: none;
+    border-color: var(--main-color);
+    box-shadow: 0 0 15px rgba(0, 200, 255, 0.35);
+}
+
+.contact-form-field textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Campo anti-spam — invisível para humanos */
+.contact-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Botão de envio */
+.contact-form-submit {
+    padding: 0.9rem 1.5rem;
+    margin-top: 0.5rem;
+
+    background: var(--main-color);
+    color: #051018;
+
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    transition: background var(--transition-base),
+                box-shadow var(--transition-base),
+                transform var(--transition-base);
+}
+
+.contact-form-submit:hover:not(:disabled) {
+    background: var(--second-color);
+    box-shadow: var(--shadow-glow-lg);
+    transform: translateY(-2px);
+}
+
+.contact-form-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.contact-form-submit:focus-visible {
+    outline: 2px solid var(--main-color);
+    outline-offset: 3px;
+}
+
+/* Feedback de sucesso/erro */
+.contact-form-feedback {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    text-align: center;
+    line-height: 1.5;
+    min-height: 1.5rem;
+}
+
+.contact-form-feedback.success {
+    color: #6ce4a1;
+}
+
+.contact-form-feedback.error {
+    color: #ff8a8a;
+}
+
+/* ================= BLOCO DE CONTATOS ================= */
+
+.contact-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 3vw, 2rem);
+}
+
+/* WhatsApp + E-mail */
+.contact-channels {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+}
+
+.contact-channel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+
+    padding: 1.5rem 1rem;
 
     background: rgba(0, 0, 0, 0.4);
     border-radius: 10px;
@@ -159,101 +322,48 @@
     transition: box-shadow var(--transition-base);
 }
 
-.contato-principal > div {
-    width: 100%;
-    max-width: 400px;
+.contact-channel i {
+    font-size: 2.2rem;
+    color: var(--main-color);
+    margin-bottom: 0.2rem;
 }
 
-.contato-principal p {
-    font-size: 1.1rem;
-    margin-top: 10px;
-}
-
-.contato-principal a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-
-    max-width: 100%;
-    padding: 0.5rem 0;
-
-    color: var(--text-color);
+.contact-channel-label {
+    font-family: var(--font-display);
     font-size: 1rem;
+    color: var(--main-color);
+    margin-bottom: 0.3rem;
+}
 
+.contact-channel a {
+    color: var(--text-color);
+    font-size: 0.95rem;
     word-break: break-word;
     overflow-wrap: anywhere;
 
     transition: color var(--transition-base);
 }
 
-.contato-principal a:hover {
+.contact-channel a:hover {
     color: var(--main-color);
     text-decoration: underline;
 }
 
-.contato-principal a i {
+/* Redes sociais */
+.contact-social-wrapper {
+    padding: 1.5rem 1rem;
+
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    box-shadow: var(--shadow-glow);
+}
+
+.contact-social-title {
+    font-family: var(--font-display);
+    font-size: 1rem;
     color: var(--main-color);
-    font-size: 1.4rem;
-    flex-shrink: 0;
-
-    transition: color var(--transition-base);
-}
-
-.contato-principal a:hover i {
-    color: var(--text-color);
-}
-
-
-/* ================= SOCIAL ================= */
-
-.social {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
-
-    padding-bottom: 25px;
     text-align: center;
-}
-
-.social-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.social-card a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 80px;
-    height: 80px;
-
-    color: var(--main-color);
-    font-size: 50px;
-
-    border: 2px solid var(--main-color);
-    border-radius: 50%;
-
-    transition: transform var(--transition-base),
-                background var(--transition-base),
-                color var(--transition-base),
-                box-shadow var(--transition-base);
-}
-
-.social-card a:hover {
-    transform: scale(1.15) translateY(-8px);
-    background-color: var(--main-color);
-    color: #000000;
-    box-shadow: var(--shadow-glow-lg);
-}
-
-.social-card p {
-    font-size: 0.95rem;
-    color: var(--text-color);
+    margin-bottom: 1rem;
 }
 
 
@@ -329,15 +439,27 @@
         text-align: center;
     }
 
-    .contato-principal {
-        flex-direction: column;
-    }
-
     .footer {
         padding: 3rem 5%;
     }
 }
 
+
+/* ============================================================
+   CONTATO — Layout desktop (grid 2 colunas)
+   ============================================================ */
+
+@media (min-width: 1101px) {
+
+    .contato-grid {
+        grid-template-columns: 1.2fr 1fr;
+        align-items: stretch;
+    }
+
+    .contact-channels {
+        grid-template-columns: 1fr 1fr;
+    }
+}
 
 /* --- Tablet / mobile landscape --- */
 @media (max-width: 910px) {
@@ -391,17 +513,23 @@
 /* --- Mobile pequeno --- */
 @media (max-width: 425px) {
 
-    .contato-principal {
-        padding: 1.5rem 1rem;
-    }
-
     .social {
-        flex-direction: column;
-        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
     }
 
     .social-card {
-        flex-direction: row;
-        gap: 1rem;
+        flex-direction: column;
+    }
+
+    .social-card a {
+        width: 50px;
+        height: 50px;
+        font-size: 1.6rem;
+    }
+
+    .social-card p {
+        font-size: 0.8rem;
     }
 }

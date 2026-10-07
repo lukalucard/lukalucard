@@ -1,12 +1,31 @@
 {
   "name": "lukalucard-portfolio",
   "version": "1.0.0",
-  "description": "Portfólio de Luka Lucard",
+  "description": "Portfólio de Luka Lucard — Front-End, Design e Backend",
   "main": "backend/server.js",
+  "type": "commonjs",
   "scripts": {
-    "start": "node backend/server.js"
+    "start": "node backend/server.js",
+    "dev": "node --watch backend/server.js"
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "portfolio",
+    "frontend",
+    "backend",
+    "express",
+    "nodejs"
+  ],
+  "author": "Luiz Carlos (Luka Lucard)",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.19.2"
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.1",
+    "express-validator": "^7.2.1",
+    "nodemailer": "^6.9.16"
   }
 }
