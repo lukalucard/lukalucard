@@ -65,3 +65,13 @@ build/
 # ============================================================
 coverage/
 .nyc_output/
+/generated/prisma
+
+# ============================================================
+# Prisma
+# ============================================================
+# Prisma Client gerado automaticamente (reconstruído no build)
+backend/src/generated/
+
+# Migrations antigas (mantém as ativas, ignora experimentais)
+# prisma/migrations/**/migration_lock_old.toml

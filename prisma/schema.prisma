@@ -1,0 +1,53 @@
+// ============================================================
+// prisma/schema.prisma
+// Schema do banco de dados do portfólio
+// ============================================================
+
+generator client {
+    provider = "prisma-client-js"
+    output   = "../backend/src/generated/prisma"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+// ============================================================
+// MODELO: Contact
+// Mensagens enviadas pelo formulário de contato
+// ============================================================
+
+model Contact {
+    id          String   @id @default(uuid())
+    name        String   @db.VarChar(100)
+    email       String   @db.VarChar(254)
+    subject     String?  @db.VarChar(150)
+    message     String   @db.Text
+
+    status      ContactStatus @default(NEW)
+    ipAddress   String?  @db.VarChar(45)   // IPv6 cabe em 45 caracteres
+    userAgent   String?  @db.Text
+
+    emailSent   Boolean  @default(false)
+    emailError  String?  @db.Text
+
+    createdAt   DateTime @default(now())
+    updatedAt   DateTime @updatedAt
+
+    @@index([status])
+    @@index([createdAt])
+    @@map("contacts")
+}
+
+// ============================================================
+// ENUM: ContactStatus
+// Ciclo de vida de uma mensagem
+// ============================================================
+
+enum ContactStatus {
+    NEW         // recém-chegada
+    READ        // visualizada por você
+    REPLIED     // já respondida
+    ARCHIVED    // arquivada
+}
