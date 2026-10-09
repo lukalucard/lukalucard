@@ -130,6 +130,7 @@ async function sendNotification({ name, email, subject, message }) {
 
 /**
  * Envia a auto-resposta pro visitante.
+ * Com timeout de 5s — se demorar, cancela pra não travar o fluxo.
  */
 async function sendAutoReply({ name, email }) {
     const mailOptions = {
@@ -139,7 +140,16 @@ async function sendAutoReply({ name, email }) {
         html: buildAutoReplyHtml({ name }),
     };
 
-    return transporter.sendMail(mailOptions);
+    // Promise com timeout: se o SMTP demorar, cancela
+    return Promise.race([
+        transporter.sendMail(mailOptions),
+        new Promise((_, reject) =>
+            setTimeout(
+                () => reject(new Error("Timeout ao enviar auto-resposta")),
+                5000
+            )
+        ),
+    ]);
 }
 
 /**
