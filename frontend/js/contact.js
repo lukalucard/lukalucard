@@ -12,7 +12,7 @@
     const API_URL = "/api/contact";
 
     // Tempo máximo de espera da resposta (ms)
-    const TIMEOUT_MS = 15000;
+    const TIMEOUT_MS = 30000;
 
 
     // ================= ELEMENTOS =================
